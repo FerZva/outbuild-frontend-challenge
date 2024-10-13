@@ -1,0 +1,119 @@
+@use 'Variables';
+
+.guest-layout-page {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: radial-gradient(
+        circle at 30% 30%,
+        rgba(205, 132, 241, 0.8),
+        transparent
+        ),
+        radial-gradient(circle at 70% 70%, rgba(132, 205, 241, 0.8), transparent),
+        radial-gradient(circle at 50% 50%, rgba(241, 156, 132, 0.8), transparent);
+    background-color: #f0f4f8;
+    
+    &_container {
+        background-color: Variables.$loginBackgroundColor;
+        padding: 2rem;
+        border-radius: 1rem;
+        width: 26rem;
+
+        &_header-content {
+            text-align: center;
+            margin-bottom: 3rem;
+
+            &_logo-container {
+                display: flex;
+                justify-content: center;
+
+                &_logo {
+                    width: 5rem;
+                    height: 4rem;
+                }
+            }
+        }
+
+        &_form-content_form-container {
+            width: 100%;
+
+            &_email-container {
+                display: flex;
+                flex-direction: column;
+
+                &_p{
+                    margin-bottom: 5px;
+                }
+
+                &_input {
+                    width: 100%;
+                    padding: 5px;
+                    border-radius: 0.5rem;
+                    border: 1px solid gray;
+                    margin-bottom: 1rem;
+
+                    &:focus {
+                            outline: none;
+                        }
+                }
+
+                &_label {
+                    display: none;
+                }
+            }
+
+            &_password-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 5px;
+                border-radius: 0.5rem;
+                border: 1px solid gray;
+                margin-bottom: 1rem;
+
+                &_p {
+                        margin-bottom: 5px;
+                    }
+
+                &_input {
+                    width: 90%;
+                    margin-right: 0.5rem;
+                    border: none;
+                
+                    &:focus {
+                            outline: none;
+                        }
+                }
+
+                &_icon {
+                    display: flex;
+                    align-items: center;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            &_button-container {
+
+                &_button {
+                    width: 100%;
+                    padding: 10px 5px;
+                    border-radius: 0.5rem;
+                    border: 1px solid gray;
+                    background-color: black;
+                    color: white;
+                    cursor: pointer;
+                    font-size: 15px;
+                    
+                    &:hover {
+                        background-color: rgb(46, 46, 46);
+                        transition: ease 0.2s all;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -3,6 +3,17 @@ import GuestLayout from "./components/GuestLayout";
 import DefaultLayout from "./components/DefaultLayout";
 import Login from "./views/Login";
 import Dashboard from "./views/Dashboard";
+import { useAuth } from "./context/AuthContext";
+
+const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
+  const { isAuthenticated } = useAuth();
+
+  if (!isAuthenticated) {
+    return <Navigate to="/login" />;
+  }
+
+  return children;
+};
 
 const router = createBrowserRouter([
   {
@@ -11,11 +22,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard",
-        element: <Navigate to="/" />,
-      },
-      {
-        path: "/",
-        element: <Dashboard />,
+        element: (
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        ),
       },
     ],
   },

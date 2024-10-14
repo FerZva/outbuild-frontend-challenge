@@ -26,6 +26,10 @@
                     transition: ease 0.2s all;
                 }
             }
+
+        @media screen and (max-width: 425px) {
+            padding: 1rem 5px;
+        }
     }
 
     &_table-section {
@@ -73,6 +77,10 @@
                     }
                 }
             }
+        }
+
+        @media screen and (max-width: 425px) {
+            margin: 5px;
         }
     }
 
